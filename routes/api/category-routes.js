@@ -93,10 +93,12 @@ router.delete("/:id", async (req, res) => {
         id: req.params.id,
       },
     });
+
     if (!delCat) {
-      res.status(404).json({ message: "No product found with this id" });
+      res.status(404).json({ message: "No category found with this id" });
       return;
     }
+
     res.json(`successfully deleted categoryId ${req.params.id}`);
   } catch (err) {
     console.log(err);
